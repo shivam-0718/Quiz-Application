@@ -10,7 +10,9 @@ import java.util.List;
 public interface IQuestionRepo extends JpaRepository<Question, Long> {
 
     //show categories first
-
     @Query("SELECT DISTINCT q.category FROM Question q")
     List<String> showCategories();
+
+    //show questions by category
+    List<Question> findByCategory(String category);
 }
