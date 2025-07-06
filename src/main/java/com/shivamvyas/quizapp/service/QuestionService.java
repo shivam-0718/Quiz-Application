@@ -2,11 +2,12 @@ package com.shivamvyas.quizapp.service;
 
 import com.shivamvyas.quizapp.model.Question;
 import com.shivamvyas.quizapp.repo.IQuestionRepo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
+@Slf4j
 @Service
 public class QuestionService implements IQuestionService {
 
@@ -25,6 +26,10 @@ public class QuestionService implements IQuestionService {
 
     @Override
     public List<Question> getQuestionsByCategory(String category) {
-        return List.of();
+        List<Question> questions = repo.findByCategory(category);
+        questions.forEach(q -> {
+            q.setRightAnswer("");
+        });
+        return questions;
     }
 }
