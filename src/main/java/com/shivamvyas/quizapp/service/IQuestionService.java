@@ -9,6 +9,7 @@ public interface IQuestionService {
     List<String> showCategoriesList();
     List<Question> getQuestionsByCategory(String category);
     String addQuestion(Question question);
-    Question getQuestionById(Long id) throws QuestionNotFoundException;
-    String updateQuestion(Long id, Question question) throws QuestionNotFoundException;
+    Question getQuestionById(Long id);
+    String updateQuestion(Long id, Question question);
+    String deleteQuestion(Long id);
 }
