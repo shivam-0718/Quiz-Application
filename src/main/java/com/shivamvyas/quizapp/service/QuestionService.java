@@ -17,4 +17,14 @@ public class QuestionService implements IQuestionService {
     public List<Question> getQuestions() {
         return repo.findAll();
     }
+
+    @Override
+    public List<String> showCategoriesList() {
+        return repo.showCategories();
+    }
+
+    @Override
+    public List<Question> getQuestionsByCategory(String category) {
+        return List.of();
+    }
 }
