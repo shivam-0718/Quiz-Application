@@ -1,6 +1,7 @@
 package com.shivamvyas.quizapp.rest;
 
 import com.shivamvyas.quizapp.model.QuestionClient;
+import com.shivamvyas.quizapp.model.Response;
 import com.shivamvyas.quizapp.service.IQuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,12 +19,18 @@ public class QuizController {
     @PostMapping("/create")
     public ResponseEntity<String> createQuiz(@RequestParam String category, @RequestParam int numOfQues, @RequestParam String title) {
         String response = service.createQuiz(category, numOfQues, title);
-        return new ResponseEntity<String>("This is the page", HttpStatus.OK);
+        return new ResponseEntity<String>(response, HttpStatus.OK);
     }
 
     @GetMapping("/get/{id}")
     public ResponseEntity<List<QuestionClient>> getQuizQuestions(@PathVariable Long id) {
         List<QuestionClient> questionsToUser = service.getQuizQuestions(id);
         return new ResponseEntity<List<QuestionClient>>(questionsToUser, HttpStatus.OK);
+    }
+
+    @PostMapping("/submit/{id}")
+    public ResponseEntity<String> submitQuiz(@PathVariable Long id, @RequestBody List<Response> responses) {
+        String response = service.calculateResult(id, responses);
+        return new ResponseEntity<String>(response, HttpStatus.OK);
     }
 }
