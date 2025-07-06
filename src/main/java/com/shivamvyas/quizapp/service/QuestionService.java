@@ -60,4 +60,13 @@ public class QuestionService implements IQuestionService {
         throw new QuestionNotFoundException("Question is not there in the questionnaire. Please try again!");
     }
 
+    public String deleteQuestion(Long id) {
+        Optional<Question> optional = repo.findById(id);
+        if(optional.isPresent()) {
+            repo.deleteById(id);
+            return "Question has been deleted successfully";
+        }
+        throw new QuestionNotFoundException("Question is not there in the questionnaire. Please try again!");
+    }
+
 }
