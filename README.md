@@ -30,6 +30,23 @@ This project leverages a robust set of technologies across different layers to e
 | | Maven | Project dependency management and build automation |
 | | Spring Boot DevTools | Enhances development productivity and hot-reloading |
 
+## 📦 Key Libraries and Frameworks
+
+The project relies on a curated set of libraries to handle its core functionalities.
+
+| Package | Artifact | Version | Usecase |
+|---------|----------|---------|---------|
+| `org.springframework.boot` | `spring-boot-starter-web` | 3.5.3* | Core framework for building the web application and RESTful services. |
+| `org.springframework.boot` | `spring-boot-starter-data-jpa` | 3.5.3* | Provides JPA support for database operations and entity management. |
+| `org.springframework.boot` | `spring-boot-starter-test` | 3.5.3* | Foundational library for unit and integration testing. |
+| `org.springframework.boot` | `spring-boot-devtools` | 3.5.3* | Enhances development productivity and hot-reloading capabilities. |
+| `com.mysql` | `mysql-connector-j` | (managed)* | MySQL database driver for connecting to MySQL databases. |
+| `com.h2database` | `h2` | (managed)* | In-memory database for development and testing purposes. |
+| `org.projectlombok` | `lombok` | (managed)* | Reduces boilerplate code for model and entity classes via annotations. |
+| `io.swagger.core.v3` | `swagger-annotations` | 2.2.15 | Provides annotations for OpenAPI documentation generation. |
+| `org.springdoc` | `springdoc-openapi-starter-webmvc-ui` | 2.2.0 | Generates interactive API documentation with Swagger UI. |
+| `org.springframework.boot` | `spring-boot-starter-validation` | 3.5.3* | Provides validation support for request/response data. |
+
 ## 📋 Prerequisites
 
 | Requirement | Version/Details |
