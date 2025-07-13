@@ -311,7 +311,7 @@ spring.jpa.properties.hibernate.format_sql=true
 
 If you encounter any issues or have questions, please:
 
-1. Check the [Issues](https://github.com/yourusername/quizapp/issues) section (replace with your actual repo URL)
+1. Check the [Issues](https://github.com/shivam-0718/Quiz-Application/issues) section.
 2. Create a new issue if your problem isn't already reported
 3. Provide detailed information about your environment and the issue
 
